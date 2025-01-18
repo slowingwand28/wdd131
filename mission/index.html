@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission Statement</title>
     <link rel="stylesheet" href="style.css">
+    <script src="mission.js" defer></script>
 </head>
-<body>
+<body id="bod">
     <div class="content">
         <header>
             <h1>Mission Statement</h1>
+            <select name="mode" id="select-mode">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
             <p class="bluetext">Brigham Young University-Idaho</p>
         </header>
         <main>
@@ -28,7 +33,7 @@
             </ol>
         </main>
         <footer>
-            <img src="byui-logo_blue.webp" alt="BYUI-Logo">
+            <img id="logo" src="byui-logo_blue.webp" alt="BYUI-Logo">
         </footer>
     </div>
 </body>

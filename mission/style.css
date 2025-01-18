@@ -57,7 +57,20 @@ li {
     padding-bottom: 20px;
 }
 
-footer img {
+#logo {
     max-width: 150px;
     padding-bottom: 5%;
+}
+
+.dark {
+    background-color: #333;
+    color: white;
+}
+
+.dark .bluetext {
+    color: #4F9ACF;
+}
+
+.dark .content {
+    border-color: white;
 }
