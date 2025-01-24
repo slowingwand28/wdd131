@@ -22,20 +22,24 @@ h1, h2 {
     font-family: var(--secondary-font);
 }
 
+header {
+    color: var(--text-light);
+}
+
 button {
     border: none;
     background-color: var(--primary-color);
     color: var(--text-light);
     font-size: larger;
+    padding-bottom: 10px;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 a {
-    color: var(--text-light);
-}
-
-header {
-    display: grid;
-    grid-template-columns: 1fr;
     color: var(--text-light);
 }
 
@@ -70,3 +74,26 @@ footer{
     color: var(--text-light);
 }
 
+@media screen and (min-width: 700px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    button {
+        display: none;
+    }
+
+    .links {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
