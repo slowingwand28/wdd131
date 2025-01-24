@@ -12,10 +12,10 @@
 
 body {
     font-family: var(--primary-font);
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 0;
     text-align: center;
-    background-color: lightgray;
+    background-color: var(--primary-color);
 }
 
 h1, h2 {
@@ -36,28 +36,37 @@ a {
 header {
     display: grid;
     grid-template-columns: 1fr;
-    padding-bottom: 10px;
-    background-color: var(--primary-color);
     color: var(--text-light);
+}
+
+main {
+    background-color: lightgray;
+    padding-bottom: 2%;
 }
 
 .gallery {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 50px;
 }
 
 img {
     max-width: 100%;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
 }
 
 figure {
-    width: 250px;
-    height: 250px;
     margin: 0 auto;
+    background-color: white;
+    width: 270px;
+    height: 260px;
+    padding-top: 10px;
+    box-shadow: 5px 5px 5px;
 }
 
 footer{
-    background-color: var(--primary-color);
     color: var(--text-light);
 }
+
