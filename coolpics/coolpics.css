@@ -39,6 +39,10 @@ button {
     grid-template-columns: 1fr;
 }
 
+.hide {
+    display: none;
+}
+
 a {
     color: var(--text-light);
 }
