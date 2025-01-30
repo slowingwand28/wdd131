@@ -22,6 +22,16 @@ h1, h2 {
     font-family: var(--secondary-font);
 }
 
+.viewer {
+    position: fixed;
+    top:0; left:0; bottom:0; right:0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.viewer img {
+    max-height: 500px;
+}
+
 header {
     color: var(--text-light);
 }
@@ -58,7 +68,7 @@ main {
     gap: 50px;
 }
 
-img {
+.small-pic {
     max-width: 100%;
     width: 250px;
     height: 250px;
