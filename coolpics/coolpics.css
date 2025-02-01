@@ -26,17 +26,30 @@ h1, h2 {
     position: fixed;
     top:0; left:0; bottom:0; right:0;
     background-color: rgba(0, 0, 0, 0.75);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
 }
 
 .viewer img {
-    max-height: 500px;
+    max-height: 400px;
+    grid-row: 2;
+}
+
+.close-viewer {
+    grid-row: 1;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: larger;
+    padding-left: 50%;
 }
 
 header {
     color: var(--text-light);
 }
 
-button {
+.menubutton {
     border: none;
     background-color: var(--primary-color);
     color: var(--text-light);
@@ -90,12 +103,12 @@ footer{
 
 @media screen and (min-width: 700px) {
     .gallery {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto auto;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    button {
+    .menubutton {
         display: none;
     }
 
@@ -109,5 +122,9 @@ footer{
         grid-template-columns: 1fr 1fr 1fr;
         margin-left: 10%;
         margin-right: 10%;
+    }
+
+    .viewer {
+        top:5%; left:5%; bottom:5%; right:5%;
     }
 }
