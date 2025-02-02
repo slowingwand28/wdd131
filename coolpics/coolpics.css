@@ -28,7 +28,7 @@ h1, h2 {
     background-color: rgba(0, 0, 0, 0.75);
     display: grid;
     grid-template-rows: 1fr 1fr;
-    padding-top: 5%;
+    padding-top: 10%;
 }
 
 .viewer img {
@@ -106,6 +106,10 @@ footer{
     .gallery {
         grid-template-columns: auto auto;
     }
+
+    .viewer img {
+        height: 35%;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -127,5 +131,15 @@ footer{
 
     .viewer {
         top:5%; left:5%; bottom:5%; right:5%;
+        padding-top: 5%;
+    }
+
+    .viewer img {
+        height: 45%;
+    }
+
+    .close-viewer {
+        justify-self: center;
+        padding-left: 45%;
     }
 }
