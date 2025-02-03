@@ -106,10 +106,6 @@ footer{
     .gallery {
         grid-template-columns: auto auto;
     }
-
-    .viewer img {
-        height: 35%;
-    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -135,11 +131,6 @@ footer{
     }
 
     .viewer img {
-        height: 45%;
-    }
-
-    .close-viewer {
-        justify-self: center;
-        padding-left: 45%;
+        height: 27%;
     }
 }
