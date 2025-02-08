@@ -1,0 +1,68 @@
+:root {
+    --bittersweet: #ff5e5bff;
+    --timberwolf: #d8d8d8ff;
+    --ivory: #ffffeaff;
+    --robin-egg-blue: #00cecbff;
+    --maize: #ffed66ff;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 0 auto;
+    background-color: var(--ivory);
+}
+
+h1 {
+    justify-self: center;
+    font-size: 3em;
+    padding: 10px;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 80px 80px 75px;
+    justify-content: end;
+    justify-items: end;
+    list-style: none;
+    padding: 20px;
+    border-top: 2px solid var(--bittersweet);
+    border-bottom: 2px solid var(--bittersweet);
+}
+
+nav a {
+    text-decoration: none;
+    font-size: larger;
+}
+
+.skiptocontent a {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: red;
+    color: white;
+    border-radius: 2px;
+    font-size: larger;
+}
+.skiptocontent a:focus {
+    top: 0;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-self: end;
+    padding-right: 30px;
+  }
+
+.books {
+    display: grid;
+    grid-template-columns: 30% 30%;
+    justify-content: center;
+    align-items: start;
+}
+
+.cover {
+    padding-left: 5%;
+    width: 300px;
+    height: auto;
+}
