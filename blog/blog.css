@@ -54,7 +54,7 @@ nav a {
     padding-right: 30px;
   }
 
-.books {
+.books .book{
     display: grid;
     grid-template-columns: 30% 30%;
     justify-content: center;
