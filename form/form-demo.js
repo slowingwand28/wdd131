@@ -14,8 +14,18 @@ function togglePaymentDetails(e) {
   
     // Show the container based on the selected payment method, and add the required attribute back.
     let value = e.target.value;
+    creditCardContainer.classList.add("hide");
+    paypalContainer.classList.add("hide");
+    theForm.creditCardNumber.required = false;
+    theForm.paypalUsername.required = false;
     
-    if (value == "creditCard")
+    if (value == "creditCard") {
+        creditCardContainer.classList.remove("hide");
+        theForm.creditCardNumber.required = true;
+    } else if (value == "paypal") {
+        paypalContainer.classList.remove("hide");
+        theForm.paypalUsername.required = true;
+    }
 }
 
 // attach a change event handler to the paymentMethod input
