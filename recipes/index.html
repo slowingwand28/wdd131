@@ -9,14 +9,41 @@
 </head>
 <body>
     <header>
-        <img class="title_image" src="images/recipe-book.png" alt="Recipe Book Logo">
+        <img class="title-image" src="images/recipe-book.png" alt="Recipe Book Logo">
         <h1>Recipe Book</h1>
     </header>
     <main>
-
+        <div class="search-container">
+            <input type="text" placeholder="Find a recipe" class="search-input">
+            <button class="search-button"><img src="images/search.svg" alt="Search"></button>
+        </div>
+        <div class="main-content">
+            <div class="recipe-container">
+                <img class="recipe-image" src="images/apple-crisp.jpg" alt="Apple Crisp Picture">
+                <div class="recipe-info">
+                    <p class="tags">dessert</p>
+                    <h2 class="recipe-name">Apple Crisp</h2>
+                    <span
+                        class="rating"
+                        role="img"
+                        aria-label="Rating: 4 out of 5 stars"
+                    >
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star-empty">⭐</span>
+                        <span aria-hidden="true" class="icon-star-empty">☆</span>
+                    </span>
+                    <p class="recipe-discription">
+                        This apple crisp recipe is a simple yet delicious fall dessert 
+                        that's great served warm with vanilla ice cream.
+                    </p>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
-        <a class="icons_link" href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
+        <a class="icons-link" href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
         <div class="social">
             <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
             <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
