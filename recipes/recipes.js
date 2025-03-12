@@ -279,3 +279,58 @@ const recipes = [
 		rating: 4
 	}
 ]
+
+function getRandomRecipe(recipes){
+    const randomIndex = Math.floor(Math.random() * recipes.length);
+    const randomObject = recipes[randomIndex];
+    return randomObject;
+}
+
+function recipeTemplate(recipe){
+    return `<img class="recipe-image" src="${recipe.image}" alt="${recipe.name}">
+                <div class="recipe-info">
+                    ${tagsTemplate(recipe.tags)}
+                    <h2 class="recipe-name">${recipe.name}</h2>
+                    <span
+                        class="rating"
+                        role="img"
+                        aria-label="Rating: ${recipe.rating} out of 5 stars"
+                    >
+                        ${ratingTemplate(recipe.rating)}
+                    </span>
+                    <p class="recipe-discription">${recipe.description}</p>
+                </div>`
+}
+
+function tagsTemplate(tags){
+    return tags.map((tag) => `<p class="tags">${tag}</p>`).join(" ");
+}
+
+function ratingTemplate(rating){
+    let html;
+        for (let i = 1; i <= 5; i++) {
+            if (i <= rating) {
+                html = `<span aria-hidden="true" class="icon-star">⭐</span>`
+            }
+            else {
+                html = `<span aria-hidden="true" class="icon-star-empty">☆</span>`
+            }
+        }
+    return html
+}
+
+function renderRecipes(recipeList){
+    let recipeContainer = document.querySelector(".recipe-container");
+    let html = recipeTemplate(recipeList);
+    recipeContainer.innerHTML += html;
+}
+
+function init(){
+    const recipe = getRandomRecipe(recipes);
+    let recipeContainer = document.querySelector(".recipe-container");
+    recipeContainer.innerHTML = "";
+    renderRecipes(recipe);
+    console.log("running")
+}
+
+init();
