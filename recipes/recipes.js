@@ -289,8 +289,9 @@ function getRandomRecipe(recipes){
 function recipeTemplate(recipe){
     return `<img class="recipe-image" src="${recipe.image}" alt="${recipe.name}">
                 <div class="recipe-info">
-					<div class="">
-                    ${tagsTemplate(recipe.tags)}
+					<div class="tag-container">
+                    	${tagsTemplate(recipe.tags)}
+					</div>
                     <h2 class="recipe-name">${recipe.name}</h2>
                     <span
                         class="rating"

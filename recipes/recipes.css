@@ -80,6 +80,13 @@ header h1 {
     width: 100%;
 }
 
+.tag-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .tags {
     font-size: 1.5em;
     border: 2px solid black;
@@ -89,7 +96,6 @@ header h1 {
 .recipe-name {
     color: dodgerblue;
     font-size: 2em;
-    line-height: 0%;
 }
 
 .recipe-discription {
