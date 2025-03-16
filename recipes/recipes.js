@@ -287,21 +287,23 @@ function getRandomRecipe(recipes){
 }
 
 function recipeTemplate(recipe){
-    return `<img class="recipe-image" src="${recipe.image}" alt="${recipe.name}">
-                <div class="recipe-info">
-					<div class="tag-container">
-                    	${tagsTemplate(recipe.tags)}
+    return `<div class="recipe-container">
+				<img class="recipe-image" src="${recipe.image}" alt="${recipe.name}">
+					<div class="recipe-info">
+						<div class="tag-container">
+							${tagsTemplate(recipe.tags)}
+						</div>
+						<h2 class="recipe-name">${recipe.name}</h2>
+						<span
+							class="rating"
+							role="img"
+							aria-label="Rating: ${recipe.rating} out of 5 stars"
+						>
+							${ratingTemplate(recipe.rating)}
+						</span>
+						<p class="recipe-discription">${recipe.description}</p>
 					</div>
-                    <h2 class="recipe-name">${recipe.name}</h2>
-                    <span
-                        class="rating"
-                        role="img"
-                        aria-label="Rating: ${recipe.rating} out of 5 stars"
-                    >
-                        ${ratingTemplate(recipe.rating)}
-                    </span>
-                    <p class="recipe-discription">${recipe.description}</p>
-                </div>`
+			</div>`
 }
 
 function tagsTemplate(tags){
@@ -322,17 +324,41 @@ function ratingTemplate(rating){
 }
 
 function renderRecipes(recipeList){
-    let recipeContainer = document.querySelector(".recipe-container");
+    let mainContent = document.querySelector(".main-content");
     let html = recipeTemplate(recipeList);
-    recipeContainer.innerHTML += html;
+    mainContent.innerHTML += html;
 }
 
 function init(){
     const recipe = getRandomRecipe(recipes);
-    let recipeContainer = document.querySelector(".recipe-container");
-    recipeContainer.innerHTML = "";
+    let mainContent = document.querySelector(".main-content");
+    mainContent.innerHTML = "";
     renderRecipes(recipe);
-    console.log("running")
 }
+
+function searchHandler(){
+	let key_word = document.querySelector(".search-input").value.toLowerCase();
+	let filteredRecipes = filterRecipes(key_word);
+	displaySearchResults(filteredRecipes);
+}
+
+function filterRecipes(query) {
+	const filtered = recipes.filter(recipe => 
+		recipe.name.toLowerCase().includes(query) ||
+		recipe.description.toLowerCase().includes(query) ||
+		recipe.tags.some(tag => tag.toLowerCase().includes(query)) ||
+		recipe.recipeIngredient.some(ingredient => ingredient.toLowerCase().includes(query))
+	);
+	const sorted = filtered.sort((a, b) => a.name.localeCompare(b.name));
+	return sorted;
+}
+
+function displaySearchResults(recipeList) {
+	let mainContent = document.querySelector(".main-content");
+	mainContent.innerHTML = "";
+	recipeList.forEach(recipe => renderRecipes(recipe));
+}
+
+document.querySelector(".search-button").addEventListener("click", searchHandler);
 
 init();
