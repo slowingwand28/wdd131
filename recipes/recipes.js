@@ -289,6 +289,7 @@ function getRandomRecipe(recipes){
 function recipeTemplate(recipe){
     return `<img class="recipe-image" src="${recipe.image}" alt="${recipe.name}">
                 <div class="recipe-info">
+					<div class="">
                     ${tagsTemplate(recipe.tags)}
                     <h2 class="recipe-name">${recipe.name}</h2>
                     <span
@@ -307,13 +308,13 @@ function tagsTemplate(tags){
 }
 
 function ratingTemplate(rating){
-    let html;
+    let html = "";
         for (let i = 1; i <= 5; i++) {
             if (i <= rating) {
-                html = `<span aria-hidden="true" class="icon-star">⭐</span>`
+                html += `<span aria-hidden="true" class="icon-star">⭐</span>`
             }
             else {
-                html = `<span aria-hidden="true" class="icon-star-empty">☆</span>`
+                html += `<span aria-hidden="true" class="icon-star-empty">☆</span>`
             }
         }
     return html
