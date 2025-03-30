@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Stats</title>
+    <link rel="stylesheet" href="game.css">
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img class="logo" src="images/game-controller-icon.webp" alt="Game Stats Logo"></a>
+        <h1 class="site-name">Game Stats</h1>
+        <a class="survey-link" href="survey.html">Survey</a>
+    </header>
+    <main>
+        <div class="survey-container">
+            <h2>Need help deciding on a game? Answer these questions for a recomendation.</h2>
+            <form id="gameSurvey">
+                <p>1. Do you prefer single-player or multiplayer?</p>
+                <div class="choices">
+                    <input type="radio" name="q1" value="single"> Single-player<br>
+                    <input type="radio" name="q1" value="multi"> Multiplayer<br>
+                </div>
+    
+                <p>2. Do you prefer sci-fi or fantasy?</p>
+                <div class="choices">
+                    <input type="radio" name="q2" value="science"> Sci-Fi<br>
+                    <input type="radio" name="q2" value="fantasy"> Fantasy<br>
+                </div>
+
+                <p>3. Do you like open-world exploration?</p>
+                <div class="choices">
+                    <input type="radio" name="q3" value="yes"> Yes<br>
+                    <input type="radio" name="q3" value="no"> No<br>
+                </div>
+    
+                <p>4. Do you want to control an individual or lead a faction?</p>
+                <div class="choices">
+                    <input type="radio" name="q4" value="individual"> Individual<br>
+                    <input type="radio" name="q4" value="faction"> Faction<br>
+                </div>
+
+                <button type="button" class="get-rec">Get Recommendation</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>©2024 Not a real site</p>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+            <a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>
