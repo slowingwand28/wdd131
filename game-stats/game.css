@@ -70,6 +70,19 @@ main {
     margin: auto;
 }
 
+.game-card {
+    background-color: var(--accent2-color);
+    max-width: 90%;
+    margin: auto;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.hide {
+    display: none;
+}
+
 /* Survey Page */
 .survey-container {
     text-align: center;
