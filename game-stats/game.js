@@ -8,7 +8,7 @@ const games = [
         tags: ["Multiplayer", "FPS", "Sci-Fi"]
     },
     {
-        title: "Baldur’s Gate 3",
+        title: "Baldur's Gate 3",
         developer: "Larian Studios",
         publisher: "Larian Studios",
         image: "images/bg3.jpg",
@@ -40,7 +40,7 @@ const games = [
         tags: ["Single-player", "Multiplayer", "Strategy", "Sci-Fi"]
     },
     {
-        title: "Total War: WARHAMMER III",
+        title: "Total War: Warhammer 3",
         developer: "Creative Assembly",
         publisher: "SEGA",
         image: "images/tww3.jpg",

@@ -20,7 +20,7 @@ h1 {
     font-family: var(--heading-font);
 }
 
-h2, p {
+h2, h3, p {
     font-family: var(--paragraph-font);
 }
 
@@ -70,13 +70,30 @@ main {
     margin: auto;
 }
 
+.viewer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .game-card {
     background-color: var(--accent2-color);
-    max-width: 90%;
+    width: 80%;
+    max-width: 300px;
     margin: auto;
     border: 2px solid var(--primary-color);
     border-radius: 5px;
     padding: 5px;
+    text-align: center;
+}
+
+.game-card img {
+    max-width: 100%;
+}
+
+.close-viewer {
+    width: 50px;
+    margin: auto;
 }
 
 .hide {
