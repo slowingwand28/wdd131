@@ -49,3 +49,59 @@ const games = [
     }
 ]
 
+document.querySelector(".gallery").addEventListener("click", viewHandler);
+
+const homepage_content = document.querySelector(".homepage")
+
+function viewHandler(event) {
+    let game
+    const pic = event.target;
+
+    const title = pic.getAttribute("alt");
+    for (const item of games) {
+        if (title == item.title) {
+            game = item
+        }
+    }
+
+    document.querySelector("main").insertAdjacentHTML("afterbegin", viewerTemplate(game));
+    homepage_content.classList.add("hide");
+    document.querySelector(".close-viewer").addEventListener("click", closeViewer);
+}
+
+function viewerTemplate(game) {
+    return `
+    <div class="viewer">
+        ${gameCardTemplate(game)}
+        <button class="close-viewer">Exit</button>
+    </div>
+    `
+}
+
+function gameCardTemplate(game) {
+    return `
+    <div class="game-card">
+        <img src="${game.image}" alt="${game.title}">
+        <div class="game-info">
+            <h3>${game.title}</h3>
+            <p class="creators">Developer: ${game.developer}</p>
+            <p class="creators">Publisher: ${game.publisher}</p>
+            <div class="tag-container">
+                ${tagsTemplate(game.tags)}
+            </div>
+            <p>
+                ${game.description}
+            </p>
+        </div>
+    </div>
+    `
+}
+
+function tagsTemplate(tags){
+    return tags.map((tag) => `<p class="tags">${tag}</p>`).join(" ");
+}
+
+function closeViewer() {
+    document.querySelector(".viewer").remove();
+    homepage_content.classList.remove("hide");
+}
