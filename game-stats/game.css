@@ -77,7 +77,6 @@ main {
 }
 
 .game-card {
-    background-color: var(--accent2-color);
     width: 80%;
     max-width: 300px;
     margin: auto;
@@ -89,6 +88,24 @@ main {
 
 .game-card img {
     max-width: 100%;
+}
+
+.creators {
+    display: none;
+}
+
+.tag-container {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tags {
+    display: none;
+    font-style: italic;
+    border: 2px solid var(--secondary-color);
+    padding: 5px;
 }
 
 .close-viewer {
@@ -156,6 +173,28 @@ footer p {
     .survey-container h2 {
         font-size: 2em;
     }
+
+    .game-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-card {
+        width: 90%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .tag-container {
+        display: flex;
+    }
+
+    .tags {
+        display: block;
+    }
 }
 
 @media screen and (min-width: 1100px) {
@@ -170,5 +209,13 @@ footer p {
 
     .game-poster {
         width: 250px;
+    }
+
+    .game-card {
+        max-width: 750px;
+    }
+
+    .creators {
+        display: block;
     }
 }
