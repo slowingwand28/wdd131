@@ -49,18 +49,26 @@ const games = [
     }
 ]
 
-document.querySelector(".gallery").addEventListener("click", viewHandler);
+const gallery = document.querySelector(".gallery");
+if (gallery) {
+    gallery.addEventListener("click", viewHandler);
+}
 
-const homepage_content = document.querySelector(".homepage")
+const recommendation = document.querySelector(".get-rec");
+if (recommendation) {
+    recommendation.addEventListener("click", getRecommendation);
+}
+
+const homepage_content = document.querySelector(".homepage");
 
 function viewHandler(event) {
-    let game
+    let game;
     const pic = event.target;
 
     const title = pic.getAttribute("alt");
     for (const item of games) {
         if (title == item.title) {
-            game = item
+            game = item;
         }
     }
 
@@ -105,3 +113,27 @@ function closeViewer() {
     document.querySelector(".viewer").remove();
     homepage_content.classList.remove("hide");
 }
+
+function getRecommendation() {
+    let answers = {
+        q1: document.querySelector('input[name="q1"]:checked')?.value,
+        q2: document.querySelector('input[name="q2"]:checked')?.value,
+        q3: document.querySelector('input[name="q3"]:checked')?.value
+    };
+
+    let searches = [];
+    searches.push(answers.q1 === "single" ? "Single-player" : "Multiplayer");
+    searches.push(answers.q2 === "science" ? "Sci-Fi" : "Fantasy");
+    if (answers.q2 === "science") {
+        searches.push(answers.q3 === "individual" ? "FPS" : "Strategy");
+    } else {
+        searches.push(answers.q3 === "individual" ? "RPG" : "Strategy");
+    }
+    
+    let recommendedGames = games.filter(game => searches.every(tag => game.tags.includes(tag)));
+
+    const container = document.querySelector(".survey-results");
+    container.innerHTML = "";
+    container.innerHTML = recommendedGames.map(gameCardTemplate).join("<br>");
+}
+

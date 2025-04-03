@@ -19,31 +19,26 @@
             <form id="gameSurvey">
                 <p>1. Do you prefer single-player or multiplayer?</p>
                 <div class="choices">
-                    <input type="radio" name="q1" value="single"> Single-player<br>
-                    <input type="radio" name="q1" value="multi"> Multiplayer<br>
+                    <input type="radio" id="single" name="q1" value="single"> <label for="single">Single-player</label><br>
+                    <input type="radio" id="multi" name="q1" value="multi"> <label for="multi">Multiplayer</label><br>
                 </div>
     
                 <p>2. Do you prefer sci-fi or fantasy?</p>
                 <div class="choices">
-                    <input type="radio" name="q2" value="science"> Sci-Fi<br>
-                    <input type="radio" name="q2" value="fantasy"> Fantasy<br>
+                    <input type="radio" id="science" name="q2" value="science"> <label for="science">Sci-Fi</label><br>
+                    <input type="radio" id="fantasy" name="q2" value="fantasy"> <label for="fantasy">Fantasy</label><br>
                 </div>
 
-                <p>3. Do you like open-world exploration?</p>
+                <p>3. Do you want to control an individual or lead a faction?</p>
                 <div class="choices">
-                    <input type="radio" name="q3" value="yes"> Yes<br>
-                    <input type="radio" name="q3" value="no"> No<br>
-                </div>
-    
-                <p>4. Do you want to control an individual or lead a faction?</p>
-                <div class="choices">
-                    <input type="radio" name="q4" value="individual"> Individual<br>
-                    <input type="radio" name="q4" value="faction"> Faction<br>
+                    <input type="radio" id="individual" name="q3" value="individual"> <label for="individual">Individual</label><br>
+                    <input type="radio" id="faction" name="q3" value="faction"> <label for="faction">Faction</label><br>
                 </div>
 
                 <button type="button" class="get-rec">Get Recommendation</button>
             </form>
         </div>
+        <div class="survey-results"></div>
     </main>
     <footer>
         <p>©2024 Not a real site</p>

@@ -118,6 +118,11 @@ main {
 }
 
 /* Survey Page */
+label {
+    font-family: var(--paragraph-font);
+    font-style: italic;
+}
+
 .survey-container {
     text-align: center;
     margin: auto;
@@ -135,6 +140,7 @@ main {
 
 .get-rec {
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 footer {
